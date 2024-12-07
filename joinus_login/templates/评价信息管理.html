@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>招聘管理系统 - 面试结果管理</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;  /* 根据需要显示竖直和水平滚动条 */
+}
+
+  .header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* 固定导航栏 */
+  top: 0; /* 距离顶部0 */
+  left: 0; /* 距离左侧0 */
+  width: 100%; /* 宽度为100% */
+  z-index: 1000; /* 确保在最上层 */
+}
+.content {
+  margin-top: 60px; /* 假设导航栏高度为60px */
+}
+  .header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .sidebar {
+    width: 200px;
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    padding-top: 80px;
+  }
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+  .sidebar a:hover {
+    background-color: #696d6d;
+  }
+  .content {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  .content .welcome {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .content .image {
+    background-color: #f8d7da;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #999;
+  }
+  th {
+    background-color: #a9a9a9; /* 深灰色背景 */
+  }
+  .pagination {
+    text-align: center;
+    margin-top: 500px;
+  }
+  .pagination a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+  }
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+  .pagination a:hover {
+    background-color: #ddd;
+  }
+ .welcome span{
+    color: #000;
+    font-size: 40px;
+ }
+  #f1 {
+    color: #01A7F0;
+  }
+.button-container {
+        display: flex;
+        flex-direction: column; /* 设置为列布局 */
+        align-items: center; /* 垂直居中对齐 */
+    }
+    button {
+        margin: 5px; /* 按钮之间的间距 */
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="..\assets\img\title.png" alt="招聘网站系统标题">
+  <nav>
+    <a href="#home">用户a</a>
+    <a href="#back">返回前台</a>
+    <a href="#logout">退出登录</a>
+  </nav>
+</div>
+
+<div class="sidebar" style="display: inline;">
+   <div>
+    <img src="..\assets\img\1.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#home"  style="display: inline;">系统首页</a>
+  </div>
+  <div>
+    <img src="..\assets\img\2.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#profile" style="display: inline;">个人中心</a>
+  </div>
+  <div>
+    <img src="..\assets\img\7.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#profile" style="display: inline;">招聘信息管理</a>
+  </div>
+  <div>
+    <img src="..\assets\img\3.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#applications" style="display: inline;">应聘信息管理</a>
+  </div>
+  <div>
+    <img src="..\assets\img\4.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#interviews" style="display: inline;">面试信息管理</a>
+  </div>
+    <div>
+     <img src="..\assets\img\kong.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#results"  style="display: inline;">面试信息</a>
+  </div>
+  <div>
+    <img src="..\assets\img\5.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#results" style="display: inline;">面试结果管理</a>
+  </div>
+  <div>
+    <img src="..\assets\img\kong.png" height="30px" width="30px" style="display: inline; position: relative;left: 1 px;  top: 7px;" >
+    <a href="#evaluations"  id="f1" style="display: inline;">评价信息管理</a>
+  </div>
+</div>
+
+<div class="content">
+
+ <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>职位名称</th>
+        <th>企业名称</th>
+        <th>面试地点</th>
+        <th>面试时间</th>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>手机</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Java</td>
+        <td></td> <!-- 企业名称在图片中未提供 -->
+        <td></td> <!-- 面试地点在图片中未提供 -->
+        <td>2024-12-12</td>
+        <td></td> <!-- 用户名在图片中未提供 -->
+        <td></td> <!-- 姓名在图片中未提供 -->
+        <td></td> <!-- 手机在图片中未提供 -->
+        <td>
+          <button>结果通知</button>
+          <button>修改</button>
+        </td>
+      </tr>
+    </tbody>
+   <tr>
+        <td></td>
+        <td></td>
+        <td></td> <!-- 企业名称在图片中未提供 -->
+        <td></td> <!-- 面试地点在图片中未提供 -->
+        <td></td>
+        <td></td> <!-- 用户名在图片中未提供 -->
+        <td></td> <!-- 姓名在图片中未提供 -->
+        <td></td> <!-- 手机在图片中未提供 -->
+        <td>
+          <button></button>
+          <button></button>
+        </td>
+      </tr>
+  </table>
+  <div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">&raquo;</a>
+  </div>
+</div>
+
+</body>
+</html>
