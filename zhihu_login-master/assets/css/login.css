@@ -50,15 +50,15 @@ h2{
 	color: #555;
 }
 .switch_nav .switch_btn.on{
-	color: #0f88eb;
-	border-bottom: 2px solid #0f88eb;
+	color: #990e03;
+	border-bottom: 2px solid #990e03;
 }
 .switch_nav .switch_btn{
 	color: #878787;
 
 }
 .switch_btn_focus{
-	color: #0f88eb;
+	color: #000022;
 	border-bottom: 2px solid #0f88eb;
 }
 .switch_btn{
@@ -145,8 +145,10 @@ h2{
 .states .social_account:hover,.states .three_MinIcon img:hover{
 	color: #555;
 }
-.states img{
-	display: none;
+
+img {                 /*设置joinus图标*/
+    width: 100%;
+    height: auto;
 }
 
 .submit_btn{
@@ -158,46 +160,10 @@ h2{
 	display: block;
 	margin:20px 0;
 	color: #fff;
-	background-color: #0f88eb;
+	background-color: #000022;
 	border-radius: 3px;
 }
-.download_btn{
-	border:1px solid #0f88eb;
-	color: #0f88eb;
-	background-color: transparent;
-}
-.QRcode_btn{
-	position: relative;
 
-}
-.QRcode{
-	position: absolute;
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 8px 0 rgba(0,0,0,0.5);
-	width: 310px;
-	height: 310px;
-	bottom: 70px;
-	display: none;
-
-}
-.QRcode .box{
-	position: relative;
-	width: 0;
-	height:0;
-	border-left:20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top:20px solid #fff;
-	filter: drop-shadow(1px 1px 5px #878787);
-	left:50%;
-	bottom:0;
-	overflow: hidden;
-	z-index: 1;
-	
-}
-.QRcode img{
-	margin:30px;
-}
 #footer span,#footer a{
 	color: #aebdc9;
 	font-size: 80%;

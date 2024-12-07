@@ -138,6 +138,6 @@ textarea::-moz-placeholder {  /*----- Firefox19+ -----*/
 }
 input:focus,
 textarea:focus {
-	border:1px solid #0f88eb;  /*----- 主色调颜色 -----*/
+	border:1px solid #0f5ceb;  /*----- 主色调颜色 -----*/
 	/*box-shadow: 0 0 10px #ffdb81;*/
 }
